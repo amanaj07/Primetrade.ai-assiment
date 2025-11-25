@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #0f172a;
+}
+
+
+/* Minimal global rules and UI tokens */
+:root {
+  --bg-1: #f8fafc; /* slate-50 */
+  --bg-2: #eef2ff; /* indigo-50 */
+  --brand: #0ea5e9; /* sky-500 */
+  --muted: #64748b; /* slate-500 */
+  --card-shadow: 0 6px 18px rgba(2,6,23,0.08);
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg-1) 0%, #fbfbff 100%);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Card with subtle lift on hover */
+.card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(2,6,23,0.06);
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+.card:hover { box-shadow: var(--card-shadow); transform: translateY(-4px); }
+
+.btn-primary {
+  background-color: var(--brand);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(14,165,233,0.18); }
+
+.form-input {
+  border: 1px solid #e6eef7;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  width: 100%;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+.form-input:focus { outline: none; box-shadow: 0 6px 18px rgba(14,165,233,0.08); border-color: var(--brand); }
+
+.muted { color: var(--muted); }
+
+/* Nav helpers */
+.nav-links { display: flex; gap: 1rem; align-items: center; }
+.nav-link { color: #334155; text-decoration: none; padding: 0.35rem 0.5rem; border-radius: 0.375rem; transition: background .12s ease, color .12s ease; }
+.nav-link:hover { background: rgba(14,165,233,0.08); color: #075985; }
+
+/* Note card hover */
+.note-card { border-radius: 0.6rem; padding: 0.8rem; transition: transform .12s ease, box-shadow .12s ease; background: #fff; }
+.note-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(2,6,23,0.08); }
+
+/* small fade-in animation for cards */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp .36s cubic-bezier(.2,.9,.2,1) both; }
+
+
+
